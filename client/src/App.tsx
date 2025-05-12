@@ -12,6 +12,7 @@ import ProjectForm from "@/pages/projects/ProjectForm";
 import ProjectDetail from "@/pages/projects/ProjectDetail";
 import Invoices from "@/pages/invoices/Invoices";
 import InvoicePreview from "@/pages/invoices/InvoicePreview";
+import Settings from "@/pages/settings"; // Importing directly from pages dir
 
 function Router() {
   return (
@@ -42,7 +43,8 @@ function Router() {
         {params => <InvoicePreview invoiceId={params.id} />}
       </Route>
       
-      {/* Settings - would be added in a future enhancement */}
+      {/* Settings */}
+      <Route path="/settings" component={Settings} />
       
       {/* Fallback to 404 */}
       <Route component={NotFound} />

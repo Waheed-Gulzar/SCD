@@ -395,7 +395,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }
       } catch (error) {
         console.error('Email sending error:', error);
-        res.status(500).json({ message: "Failed to send invoice email", error: error.message });
+        const message = error instanceof Error ? error.message : "Unknown error";
+        res.status(500).json({ message: "Failed to send invoice email", error: message });
       }
     } catch (error) {
       res.status(500).json({ message: "Failed to send invoice email" });
