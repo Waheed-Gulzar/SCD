@@ -39,5 +39,7 @@ To access the application, run the following command to expose the service:
 minikube service your-service-name
 
 
+so simple and easy
+
 
 
